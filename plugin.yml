@@ -1,0 +1,26 @@
+name: MyPlugin
+main: com.wyh2004.myplugin.MyPlugin
+version: 1.0
+commands:
+  bilibili:
+    description: 哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+  play:
+    description: send Message
+  hi:
+    description: Kick Player
+  heal:
+    description: heal Player
+  hello:
+    description: 测试指令
+permissions:
+  myplugin.*:
+    description: MyPlugin Command Permissions
+    children:
+      myplugin.commands.heal: true
+      myplugin.commands.hi: true
+  myplugin.commands.heal:
+    description: /heal Command Permissions
+    default: true
+  myplugin.commands.hi:
+    description: Kick Player Permissions
+    default: op

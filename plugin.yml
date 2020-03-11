@@ -12,6 +12,8 @@ commands:
     description: heal Player
   hello:
     description: 测试指令
+  ping:
+    description: 检查玩家Ping值
 permissions:
   myplugin.*:
     description: MyPlugin Command Permissions

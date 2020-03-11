@@ -8,6 +8,7 @@ package com.wyh2004.myplugin;
 import com.wyh2004.myplugin.commands.*;
 import com.wyh2004.myplugin.event.ChatEvent;
 import com.wyh2004.myplugin.event.PlayerJoin;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MyPlugin extends JavaPlugin {
@@ -17,14 +18,19 @@ public class MyPlugin extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
-        getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
-        getServer().getPluginManager().registerEvents(new ChatEvent(), this);
-        getCommand("bilibili").setExecutor(new bilibili());
-        getCommand("play").setExecutor(new play());
-        getCommand("hi").setExecutor(new hi());
-        getCommand("heal").setExecutor(new heal());
-        getCommand("hello").setExecutor(new hello());
-        System.out.println("[MyPlugin]插件已加载");
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+            getServer().getPluginManager().registerEvents(new ChatEvent(), this);
+            getCommand("bilibili").setExecutor(new bilibili());
+            getCommand("play").setExecutor(new play());
+            getCommand("hi").setExecutor(new hi());
+            getCommand("heal").setExecutor(new heal());
+            getCommand("hello").setExecutor(new hello());
+            getCommand("ping").setExecutor(new ping());
+            System.out.println("[MyPlugin]插件已加载");
+        } else {
+            throw new RuntimeException("服务器没有安装PlaceholderAPI! , 插件无法正常运行!");
+        }
     }
 
     @Override

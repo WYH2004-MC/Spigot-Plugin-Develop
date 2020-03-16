@@ -29,7 +29,8 @@ public class MyPlugin extends JavaPlugin {
             getCommand("ping").setExecutor(new ping());
             System.out.println("[MyPlugin]插件已加载");
         } else {
-            throw new RuntimeException("服务器没有安装PlaceholderAPI! , 插件无法正常运行!");
+            getServer().shutdown();
+            throw new RuntimeException("无法找到PlaceholderAPI!! 插件无法正常运行!");
         }
     }
 

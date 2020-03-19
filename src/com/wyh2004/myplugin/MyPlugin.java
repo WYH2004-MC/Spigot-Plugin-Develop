@@ -2,7 +2,7 @@
 //-------------------
 //Code By WYH2004
 //Web Site:
-//https://wyh2004.top
+//https://www.wyh2004.top
 package com.wyh2004.myplugin;
 
 import com.wyh2004.myplugin.commands.*;

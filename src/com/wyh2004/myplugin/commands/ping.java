@@ -16,7 +16,7 @@ public class ping implements CommandExecutor {
             ping_msg = PlaceholderAPI.setPlaceholders(player, ping_msg);
             player.sendMessage(ping_msg);
         }else{
-            commandSender.sendMessage(ChatColor.RED + "该指令只能由玩家运行!");
+            commandSender.sendMessage(ChatColor.RED + "该指令只能由玩家运行!你一个控制台检测个毛线延迟！");
         }
         return false;
     }

@@ -14,11 +14,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class MyPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
-
-        getConfig().options().copyDefaults();
-        saveDefaultConfig();
-
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            getConfig().options().copyDefaults();
+            saveDefaultConfig();
+
             getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
             getServer().getPluginManager().registerEvents(new ChatEvent(), this);
             getCommand("bilibili").setExecutor(new bilibili());
@@ -29,8 +28,8 @@ public class MyPlugin extends JavaPlugin {
             getCommand("ping").setExecutor(new ping());
             System.out.println("[MyPlugin]插件已加载");
         } else {
-            getServer().shutdown();
-            throw new RuntimeException("无法找到PlaceholderAPI!! 插件无法正常运行!");
+            Bukkit.shutdown();
+            throw new RuntimeException("无法找到PlaceholderAPI， 插件无法正常运行！");
         }
     }
 

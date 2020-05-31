@@ -1,8 +1,11 @@
-//Author information
-//-------------------
-//Code By WYH2004
-//Web Site:
-//https://www.wyh2004.top
+/*
+Author information
+-------------------
+Code By WYH2004
+Web Site:
+https://www.wyh2004.top
+ */
+
 package com.wyh2004.myplugin;
 
 import com.wyh2004.myplugin.commands.*;
@@ -12,6 +15,7 @@ import com.wyh2004.myplugin.gui.ClickGUI;
 import com.wyh2004.myplugin.gui.itemopengui;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 
 public class MyPlugin extends JavaPlugin {
     @Override
@@ -32,6 +36,9 @@ public class MyPlugin extends JavaPlugin {
             getCommand("hello").setExecutor(new hello());
             getCommand("ping").setExecutor(new ping());
             getCommand("item").setExecutor(new item());
+
+            int time = getConfig().getInt("Message-time");
+            BukkitTask message = new com.wyh2004.myplugin.tasks.Message().runTaskTimer(this, 0,time * 20);
 
             System.out.println("[MyPlugin]插件已加载");
         } else {

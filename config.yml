@@ -6,3 +6,9 @@ text:
   - 'Fack'
 
 JoinMessage: '加入了服务器'
+
+Message-list:
+  - '服务器通知1'
+  - '服务器通知2'
+  - '服务器通知3'
+Message-time: 30

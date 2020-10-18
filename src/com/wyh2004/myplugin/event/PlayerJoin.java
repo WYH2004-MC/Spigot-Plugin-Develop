@@ -1,5 +1,6 @@
 package com.wyh2004.myplugin.event;
 
+import com.wyh2004.myplugin.scoreboard.Textboard;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -16,6 +17,8 @@ public class PlayerJoin implements Listener {
     @EventHandler
     public void PlayerJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
+
+        Textboard.Text(player);
 
         ItemStack item = new ItemStack(Material.NETHER_STAR, 1);
         ItemMeta itemMeta = item.getItemMeta();

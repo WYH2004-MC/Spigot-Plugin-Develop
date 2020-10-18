@@ -36,6 +36,7 @@ public class MyPlugin extends JavaPlugin {
             getCommand("hello").setExecutor(new hello());
             getCommand("ping").setExecutor(new ping());
             getCommand("item").setExecutor(new item());
+            getCommand("skull").setExecutor(new skull());
 
             int time = getConfig().getInt("Message-time");
             BukkitTask message = new com.wyh2004.myplugin.tasks.Message().runTaskTimer(this, 0,time * 20);

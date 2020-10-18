@@ -3,7 +3,7 @@ main: com.wyh2004.myplugin.MyPlugin
 version: 1.0
 commands:
   bilibili:
-    description: 哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
+    description: 123456
   play:
     description: send Message
   hi:
@@ -18,6 +18,8 @@ commands:
     description: GUI
   item:
     description: item
+  skull:
+    description: skull
 permissions:
   myplugin.*:
     description: MyPlugin Command Permissions
